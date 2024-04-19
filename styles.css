@@ -1,0 +1,72 @@
+html, body {
+  height: 100%;
+  margin: 0; 
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+body {
+  background-color: white;
+  background: linear-gradient(#dd9e64, #b65902); 
+  
+}
+
+
+
+header {
+  /* background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center; */
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.episode-image {
+  /* Add styles for episode image */
+  
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  
+
+}
+
+.img-1{
+  /* border: 1px solid #ddd; */
+  border-radius: 20px;
+  /* width: 500px; */
+
+}
+
+.feedback-form {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #D27D2D;
+  /* background-color: white; */
+  border: 1px solid #ddd;
+
+  color: white;
+  border-radius: 100px;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+button:hover {
+  /* background-color: #eee; */
+}
+
+.fa-heart, .fa-thumbs-up, .fa-thumbs-down {
+  margin-right: 10px;
+}

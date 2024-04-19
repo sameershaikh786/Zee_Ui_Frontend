@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Episode Feedback</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+<body style="color: white;">
+  <header>
+    <img src="logo.jpg" alt="" height="50px">
+  </header>
+  <main>
+    <div class="episode-image">
+      
+      <img src="img-poster.jpeg" alt="" height="150px" width="350px" class="img-1">
+    </div>
+    <div class="feedback-form">
+      <h2 style="text-align: center;">कैसा लगा यह एपिसोड ?</h2>
+      <button style="margin-top: 40px;" onclick="submitFeedbackAndRedirect('बहुत पसंद आया!', 'page2.html')"> 
+        <i class="fas fa-heart"></i> बहुत पसंद आया!
+      </button>
+      <button  style="margin-top: 25px" onclick="submitFeedbackAndRedirect('अच्छा लगा', 'page2.html')">
+        <i class="fas fa-thumbs-up"></i> अच्छा लगा
+      </button>
+      <button  style="margin-top: 25px" onclick="submitFeedbackAndRedirect('इसमें रुचि नहीं।', 'page2.html')">
+        <i class="fas fa-thumbs-down"></i> इसमें रुचि नहीं।
+      </button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    function submitFeedbackAndRedirect(feedback, pageUrl) {
+      // Store the feedback in sessionStorage to pass it to the next page
+      sessionStorage.setItem('feedback', feedback);
+      // Redirect to the specified pageUrl
+      window.location.href = pageUrl;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Feedback</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+  <style>
+    .styled-button {
+      border: 1px solid #ddd;
+      color: white;
+      border-radius: 100px;
+      padding: 10px 15px;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: center;
+      background-color: #D27D2D;
+      font-size: 20px;
+    }
+    .styled-text {
+      background-color: #D27D2D;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="" height="50px">
+  </header>
+  <main>
+    <div class="episode-image">
+      <img src="img-poster.jpeg" alt="" height="250px" width="500px" class="img-1">
+    </div>
+    <div class="feedback-text">
+      <p id="feedback"></p>
+      <p class="styled-text">अरे वाह! <br>
+        बस यूंही अपनी राय देते रहें,<br> 
+        मनोरंजन की पूरी गारंटी हमारी</p>
+    </div>
+    <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; pointer-events: none;"></canvas>
+  </main>
+  <script>
+       const feedback = sessionStorage.getItem('feedback');
+    const feedbackElement = document.getElementById('feedback');
+    feedbackElement.innerHTML = `
+      <button class="styled-button">${feedback}</button>`;
+    window.onload = function() {
+      const confettiSettings = {
+        target: 'confetti-canvas',
+        max: 80,
+        size: 2,
+        animate: true,
+        props: ['circle', 'square', 'triangle', 'line'],
+        colors: [[255, 255, 255], [255, 0, 0], [0, 255, 0], [0, 0, 255]],
+        clock: 30,
+        rotate: true,
+        start_from_edge: true,
+        respawn: true,
+      };
+      const confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+    };
+
+  </script>
+</body>
+</html>
